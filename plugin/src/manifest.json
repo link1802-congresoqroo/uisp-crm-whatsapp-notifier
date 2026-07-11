@@ -1,0 +1,54 @@
+{
+  "version": "1",
+  "information": {
+    "name": "recurring-invoice-webhook",
+    "displayName": "Recurring Invoice Webhook",
+    "description": "Dispara un webhook nativo de UISP cuando se genera una factura recurrente automáticamente. Soluciona el bug de UISP donde las facturas de planes recurrentes no disparan el webhook nativo.",
+    "url": "https://github.com/link1802-congresoqroo/uisp-whatsapp-notifier",
+    "version": "1.3.0",
+    "unmsVersionCompliancy": {
+      "min": "2.0.0",
+      "max": null
+    },
+    "author": "custom"
+  },
+  "executionPeriod": 1,
+  "configuration": [
+    {
+      "key": "ucrmUrl",
+      "label": "URL base de UISP",
+      "description": "URL interna o pública de tu servidor UISP. Ejemplo: http://192.168.0.1 o https://miuisp.com. Si existe ucrm.json (auto-generado por UISP), se prefiere su ucrmLocalUrl.",
+      "required": 1
+    },
+    {
+      "key": "apiKey",
+      "label": "API Key de UISP",
+      "description": "Clave de API con permiso de lectura en Facturas. Créala en Sistema → Usuarios API. Recuerda actualizarla aquí si la rotas.",
+      "required": 1
+    },
+    {
+      "key": "webhookUrl",
+      "label": "Webhook URL destino",
+      "description": "URL del endpoint que recibirá el webhook cuando se genere una factura recurrente.",
+      "required": 1
+    },
+    {
+      "key": "webhookSecret",
+      "label": "Secreto del webhook (recomendado)",
+      "description": "Se envía como header X-Webhook-Secret. Debe coincidir con WEBHOOK_SECRET del notifier. Alternativa más limpia que agregar ?token= a la URL.",
+      "required": 0
+    },
+    {
+      "key": "alertUrl",
+      "label": "URL de alertas (opcional)",
+      "description": "Endpoint de alertas del notifier, ej. http://192.168.0.10:3000/webhook/alert. Tras 5 corridas consecutivas con error, el plugin avisa ahí (y el notifier lo reenvía por WhatsApp al ADMIN_PHONE). Vacío = alertas deshabilitadas.",
+      "required": 0
+    },
+    {
+      "key": "timezone",
+      "label": "Zona horaria",
+      "description": "Zona horaria para mostrar las fechas. Ejemplo: America/Cancun, America/Mexico_City, America/Monterrey",
+      "required": 0
+    }
+  ]
+}
