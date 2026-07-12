@@ -93,8 +93,8 @@ Cliente recibe mensaje con link de pago
 ### 1. Clonar el Repositorio
 
 ```bash
-git clone https://github.com/link1802-congresoqroo/uisp-whatsapp-notifier.git
-cd uisp-whatsapp-notifier
+git clone https://github.com/link1802-congresoqroo/uisp-crm-whatsapp-notifier.git
+cd uisp-crm-whatsapp-notifier
 ```
 
 ### 2. Instalar Dependencias
@@ -410,7 +410,6 @@ uisp-whatsapp-notifier/
 │       ├── uisp-api.js             # Cliente de API UISP
 │       └── whatsapp.js             # Cliente de WhatsApp API
 ├── plugin/                         # Plugin UISP (REQUERIDO): webhook para facturas recurrentes
-├── ANALISIS.md                     # Análisis de seguridad, escalabilidad y eficiencia
 ├── .env.example                    # Archivo de ejemplo de configuración
 ├── .gitignore
 ├── package.json                    # Dependencias del proyecto
@@ -593,8 +592,8 @@ docker run -d --env-file .env -p 3000:3000 uisp-whatsapp-notifier
 
 ```bash
 # 1. Clonar repositorio
-git clone https://github.com/tu-usuario/uisp-whatsapp-notifier.git
-cd uisp-whatsapp-notifier
+git clone https://github.com/link1802-congresoqroo/uisp-crm-whatsapp-notifier.git
+cd uisp-crm-whatsapp-notifier
 
 # 2. Instalar dependencias
 npm install
@@ -610,9 +609,6 @@ pm2 save
 ---
 
 ## 🔐 Seguridad
-
-El análisis completo de seguridad, con hallazgos y soluciones priorizadas, está en
-[`ANALISIS.md`](./ANALISIS.md).
 
 ### Implementado
 

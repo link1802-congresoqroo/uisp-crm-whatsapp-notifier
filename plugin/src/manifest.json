@@ -4,7 +4,7 @@
     "name": "recurring-invoice-webhook",
     "displayName": "Recurring Invoice Webhook",
     "description": "Dispara un webhook nativo de UISP cuando se genera una factura recurrente automáticamente. Soluciona el bug de UISP donde las facturas de planes recurrentes no disparan el webhook nativo.",
-    "url": "https://github.com/link1802-congresoqroo/uisp-whatsapp-notifier",
+    "url": "https://github.com/link1802-congresoqroo/uisp-crm-whatsapp-notifier",
     "version": "1.3.0",
     "unmsVersionCompliancy": {
       "min": "2.0.0",

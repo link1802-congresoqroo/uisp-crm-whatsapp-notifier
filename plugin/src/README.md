@@ -2,7 +2,7 @@
 
 Plugin que resuelve el bug de UISP 3.x donde las facturas generadas automáticamente por planes recurrentes **no disparan el webhook nativo** (`invoice.add`).
 
-> **Parte del sistema [UISP WhatsApp Notifier](https://github.com/link1802-congresoqroo/uisp-whatsapp-notifier)** — este plugin es un **componente requerido** de la instalación: sin él, el notifier solo recibe webhooks de facturas manuales y las facturas recurrentes (la mayoría en un ISP) **nunca se notifican por WhatsApp**. Ver la guía completa de instalación del sistema en el [README principal](../../README.md).
+> **Parte del sistema [UISP WhatsApp Notifier](https://github.com/link1802-congresoqroo/uisp-crm-whatsapp-notifier)** — este plugin es un **componente requerido** de la instalación: sin él, el notifier solo recibe webhooks de facturas manuales y las facturas recurrentes (la mayoría en un ISP) **nunca se notifican por WhatsApp**. Ver la guía completa de instalación del sistema en el [README principal](../../README.md).
 
 ---
 
@@ -75,18 +75,18 @@ El plugin envía un `POST` con `Content-Type: application/json` con el siguiente
   "uuid": "550e8400-e29b-41d4-a716-446655440000",
   "changeType": "insert",
   "entity": "invoice",
-  "entityId": "1796",
+  "entityId": "1000",
   "eventName": "invoice.add",
   "extraData": {
     "entity": {
-      "id": 1796,
-      "clientId": 45,
-      "number": "01706",
+      "id": 1000,
+      "clientId": 10,
+      "number": "00099",
       "createdDate": "2026-02-24T15:00:03-0500",
       "dueDate": "2026-03-01T15:00:03-0500",
       "items": [ "..." ],
-      "subtotal": 350.0,
-      "total": 350.0,
+      "subtotal": 300.0,
+      "total": 300.0,
       "amountPaid": 0,
       "currencyCode": "MXN",
       "status": 1
@@ -109,7 +109,7 @@ Una factura se considera recurrente si cumple **alguna** de estas condiciones:
 
 Se excluyen los **borradores** (`status: 0`).
 
-> **Nota verificada (CRM 4.5.33):** el campo `isAutomated` **no existe** en la API v1.0, así que en la práctica el criterio activo es el de `serviceId`. Esto implica que una factura *manual* con ítem de servicio también dispara este webhook además del nativo — el duplicado lo absorbe la **idempotencia por `invoiceId` del notifier**, que descarta el segundo evento. Detalle completo en [`ANALISIS-PLUGIN.md`](../../ANALISIS-PLUGIN.md).
+> **Nota verificada (CRM 4.5.33):** el campo `isAutomated` **no existe** en la API v1.0, así que en la práctica el criterio activo es el de `serviceId`. Esto implica que una factura *manual* con ítem de servicio también dispara este webhook además del nativo — el duplicado lo absorbe la **idempotencia por `invoiceId` del notifier**, que descarta el segundo evento.
 
 ---
 
